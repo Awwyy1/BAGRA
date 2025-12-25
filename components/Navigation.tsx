@@ -10,12 +10,14 @@ export const Navigation: React.FC = () => {
     { id: 'about', label: 'О нас' },
     { id: 'services', label: 'Услуги' },
     { id: 'masters', label: 'Мастера' },
-    { id: 'contact', label: 'Контакты' }
+    { id: 'gallery', label: 'Галерея' }
   ];
+
+  const bookingUrl = "https://n49534.yclients.com/company/67283/personal/select-master?o=";
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full p-6 md:p-8 md:px-12 md:py-10 z-[150] flex justify-between items-center pointer-events-none">
+      <nav className="fixed top-0 left-0 w-full p-6 md:p-8 md:px-12 md:py-10 z-[150] flex justify-between items-center pointer-events-none bg-black/90 backdrop-blur-sm">
         {/* Logo */}
         <motion.div
           className="pointer-events-auto flex-1 md:flex-none"
@@ -44,21 +46,27 @@ export const Navigation: React.FC = () => {
           ))}
 
           <Magnetic>
-            <motion.button
+            <motion.a
+              href={bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="ml-4 px-6 py-2 bg-white text-[#0A0A0A] text-[10px] uppercase font-bold tracking-[0.1em] rounded-full"
+              className="ml-4 px-6 py-2 bg-white text-[#0A0A0A] text-[10px] uppercase font-bold tracking-[0.1em] rounded-full inline-block"
               data-cursor="hover"
             >
               Записаться
-            </motion.button>
+            </motion.a>
           </Magnetic>
         </div>
 
         {/* Mobile Central "Breathing" Book Button */}
         <div className="md:hidden flex-1 flex justify-center pointer-events-auto">
-          <motion.button
+          <motion.a
+            href={bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             animate={{
               opacity: [0.4, 1, 0.4],
               letterSpacing: ["0.1em", "0.2em", "0.1em"],
@@ -72,7 +80,7 @@ export const Navigation: React.FC = () => {
             className="text-[9px] font-bold uppercase border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-sm font-mono"
           >
             Запись
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Mobile Tactical Trigger (Right) */}

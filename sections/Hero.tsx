@@ -55,23 +55,14 @@ export const Hero: React.FC = () => {
         style={{ y: layer4Y, opacity }}
         className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10"
       >
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="text-[18vw] md:text-[20vw] font-black tracking-tighter leading-[0.85] select-none font-heading"
-        >
-          БАГРАТ
-        </motion.h1>
-
-        <div className="overflow-hidden mt-8">
+        <div className="overflow-hidden">
             <motion.p
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="text-xs md:text-sm uppercase tracking-[0.3em] md:tracking-[0.5em] font-medium opacity-60"
+              transition={{ duration: 1, delay: 0.5 }}
+              className="text-sm md:text-lg uppercase tracking-[0.3em] md:tracking-[0.5em] font-medium opacity-80"
             >
-                Искусство Вечной Точности
+                Искусство абсолютной точности
             </motion.p>
         </div>
 

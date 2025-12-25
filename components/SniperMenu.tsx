@@ -90,29 +90,22 @@ export const SniperMenu: React.FC<SniperMenuProps> = ({ isOpen, onClose, links }
           ))}
 
           {/* Menu Content */}
-          <div className="relative z-10 flex flex-col items-center">
+          <div className="relative z-10 flex flex-col items-center justify-center w-full">
             <div className="mb-8 text-[10px] tracking-[0.5em] uppercase opacity-40 font-bold font-mono">Цель_Захвачена</div>
-            <nav className="flex flex-col items-center gap-6">
+            <nav className="flex flex-col items-center gap-6 w-full">
               {links.map((link, i) => (
                 <motion.a
                   key={link.id}
                   href={`#${link.id}`}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 + i * 0.1 }}
                   onClick={onClose}
-                  className="group relative flex items-center gap-4"
+                  className="group relative text-center"
                 >
-                  <motion.span
-                    whileHover={{ scale: 1.2 }}
-                    className="w-2 h-2 border border-white rotate-45 opacity-0 group-hover:opacity-100 transition-all"
-                  />
-                  <span className="text-3xl font-black tracking-tighter uppercase group-hover:italic group-hover:translate-x-2 transition-all duration-300 font-heading">
+                  <span className="text-3xl font-black tracking-tighter uppercase group-hover:italic transition-all duration-300 font-heading">
                     {link.label}
                   </span>
-                  <div className="absolute -right-12 opacity-0 group-hover:opacity-100 transition-opacity text-[8px] font-mono">
-                    [0{i+1}]
-                  </div>
                 </motion.a>
               ))}
             </nav>
