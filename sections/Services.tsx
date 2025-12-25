@@ -26,10 +26,10 @@ const RollingNumber = ({ value }: { value: number }) => {
           <motion.div
             initial={{ y: "100%" }}
             animate={isInView ? { y: 0 } : { y: "100%" }}
-            transition={{ 
-              delay: i * 0.05, 
-              duration: 0.6, 
-              ease: [0.16, 1, 0.3, 1] 
+            transition={{
+              delay: i * 0.05,
+              duration: 0.6,
+              ease: [0.16, 1, 0.3, 1]
             }}
             className="flex flex-col"
           >
@@ -49,7 +49,7 @@ const ScrambledText = ({ text }: { text: string }) => {
 
   useEffect(() => {
     if (!isInView) return;
-    
+
     let iteration = 0;
     const interval = setInterval(() => {
       setDisplayText(
@@ -77,7 +77,7 @@ export const Services: React.FC = () => {
     <section id="services" className="relative min-h-screen w-full bg-[#0A0A0A] py-24 md:py-48 px-4 md:px-6 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/[0.02] to-transparent pointer-events-none" />
-      
+
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-24 gap-6">
           <motion.div
@@ -85,23 +85,23 @@ export const Services: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none">PRICING<br/>DATA</h2>
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none font-heading">ПРАЙС</h2>
             <div className="mt-4 flex items-center gap-4 text-[9px] md:text-[10px] uppercase tracking-[0.3em] opacity-40">
               <span className="w-8 h-[1px] bg-white" />
-              <span>System_Online / Bagrat_Standard</span>
+              <span className="font-mono">Система_Онлайн / Баграт_Стандарт</span>
             </div>
           </motion.div>
-          
+
           <p className="max-w-[280px] text-[10px] md:text-xs uppercase tracking-[0.2em] opacity-40 leading-relaxed text-left">
-            Selection of premium male grooming services for the modern architecture of style.
+            Коллекция премиальных услуг мужского груминга для современной архитектуры стиля.
           </p>
         </div>
 
         {/* Pricing Table */}
         <div className="relative border-t border-white/10">
           {/* Header */}
-          <div className="grid grid-cols-[1.5fr_repeat(3,1fr)] md:grid-cols-[2fr_repeat(3,1fr)] py-6 px-2 opacity-50 text-[8px] md:text-xs font-black tracking-[0.2em] md:tracking-[0.3em] uppercase border-b border-white/10">
-            <div>Service_Type</div>
+          <div className="grid grid-cols-[1.5fr_repeat(3,1fr)] md:grid-cols-[2fr_repeat(3,1fr)] py-6 px-2 opacity-50 text-[8px] md:text-xs font-black tracking-[0.2em] md:tracking-[0.3em] uppercase border-b border-white/10 font-mono">
+            <div>Услуга</div>
             <div className="text-center">ПРО</div>
             <div className="text-center">ТОП</div>
             <div className="text-center">БРЕНД</div>
@@ -121,7 +121,7 @@ export const Services: React.FC = () => {
               <div className="text-[10px] md:text-sm font-bold tracking-tight pr-2 leading-tight">
                 <ScrambledText text={item.name} />
               </div>
-              
+
               {item.prices.map((price, pIdx) => (
                 <div key={pIdx} className="flex justify-center text-[10px] md:text-lg text-white opacity-100">
                   <RollingNumber value={price} />
@@ -136,12 +136,12 @@ export const Services: React.FC = () => {
 
         {/* Footer info */}
         <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-6 opacity-20">
-          <div className="text-[7px] md:text-[8px] uppercase tracking-widest flex items-center gap-4">
+          <div className="text-[7px] md:text-[8px] uppercase tracking-widest flex items-center gap-4 font-mono">
             <div className="w-2 h-2 border border-white rotate-45" />
-            All procedures include premium care products
+            Все процедуры включают премиум средства ухода
           </div>
-          <div className="text-[7px] md:text-[8px] uppercase tracking-widest">
-            Last updated: Oct 2024
+          <div className="text-[7px] md:text-[8px] uppercase tracking-widest font-mono">
+            Обновлено: Октябрь 2024
           </div>
         </div>
       </div>

@@ -6,7 +6,12 @@ import { SniperMenu } from './SniperMenu';
 
 export const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const links = ['About', 'Services', 'Masters', 'Contact'];
+  const links = [
+    { id: 'about', label: 'О нас' },
+    { id: 'services', label: 'Услуги' },
+    { id: 'masters', label: 'Мастера' },
+    { id: 'contact', label: 'Контакты' }
+  ];
 
   return (
     <>
@@ -18,22 +23,22 @@ export const Navigation: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <a href="#" className="text-xl font-black tracking-tighter">BAGRAT</a>
+          <a href="#" className="text-xl font-black tracking-tighter font-heading">БАГРАТ</a>
         </motion.div>
 
         {/* Desktop Links (Hidden on Mobile) */}
         <div className="hidden md:flex gap-8 pointer-events-auto items-center">
           {links.map((link, i) => (
-            <Magnetic key={link}>
+            <Magnetic key={link.id}>
               <motion.a
-                href={`#${link.toLowerCase()}`}
+                href={`#${link.id}`}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i + 0.5, duration: 0.8 }}
                 className="text-[11px] uppercase tracking-[0.2em] font-medium opacity-60 hover:opacity-100 transition-opacity"
                 data-cursor="hover"
               >
-                {link}
+                {link.label}
               </motion.a>
             </Magnetic>
           ))}
@@ -46,7 +51,7 @@ export const Navigation: React.FC = () => {
               className="ml-4 px-6 py-2 bg-white text-[#0A0A0A] text-[10px] uppercase font-bold tracking-[0.1em] rounded-full"
               data-cursor="hover"
             >
-              Book Now
+              Записаться
             </motion.button>
           </Magnetic>
         </div>
@@ -56,7 +61,7 @@ export const Navigation: React.FC = () => {
           <motion.button
             animate={{
               opacity: [0.4, 1, 0.4],
-              letterSpacing: ["0.2em", "0.4em", "0.2em"],
+              letterSpacing: ["0.1em", "0.2em", "0.1em"],
               scale: [0.98, 1, 0.98]
             }}
             transition={{
@@ -64,9 +69,9 @@ export const Navigation: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="text-[9px] font-bold uppercase border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-sm"
+            className="text-[9px] font-bold uppercase border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-sm font-mono"
           >
-            Book
+            Запись
           </motion.button>
         </div>
 
@@ -75,7 +80,7 @@ export const Navigation: React.FC = () => {
           <button
             onClick={() => setIsMenuOpen(true)}
             className="relative w-10 h-10 flex items-center justify-center"
-            aria-label="Open Tactical Menu"
+            aria-label="Открыть меню"
           >
             {/* Crosshair lines */}
             <div className="absolute w-full h-[1px] bg-white opacity-40" />

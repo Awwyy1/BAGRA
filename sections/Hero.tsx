@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
   return (
     <section ref={ref} className="relative min-h-[100vh] w-full overflow-hidden flex flex-col justify-center">
       {/* Background Deep Lines */}
-      <motion.div 
+      <motion.div
         style={{ y: layer1Y, opacity }}
         className="absolute inset-0 flex items-center justify-center opacity-10"
       >
@@ -28,13 +28,13 @@ export const Hero: React.FC = () => {
       </motion.div>
 
       {/* Background Image - Blurred Portrait */}
-      <motion.div 
+      <motion.div
         style={{ y: layer2Y, scale, opacity }}
         className="absolute inset-0 flex items-center justify-center"
       >
         <div className="w-full h-full relative opacity-40">
-           <img 
-            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" 
+           <img
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop"
             className="w-full h-full object-cover grayscale brightness-50"
             alt="Hero BG"
            />
@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
       </motion.div>
 
       {/* Mid Layer - Abstract shapes */}
-      <motion.div 
+      <motion.div
         style={{ y: layer3Y, opacity }}
         className="absolute inset-0 flex items-center justify-center pointer-events-none"
       >
@@ -51,37 +51,37 @@ export const Hero: React.FC = () => {
       </motion.div>
 
       {/* Front Layer - Typography */}
-      <motion.div 
+      <motion.div
         style={{ y: layer4Y, opacity }}
         className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10"
       >
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="text-[20vw] font-black tracking-tighter leading-[0.85] select-none"
+          className="text-[18vw] md:text-[20vw] font-black tracking-tighter leading-[0.85] select-none font-heading"
         >
-          BAGRAT
+          БАГРАТ
         </motion.h1>
-        
+
         <div className="overflow-hidden mt-8">
-            <motion.p 
+            <motion.p
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="text-xs md:text-sm uppercase tracking-[0.5em] font-light opacity-60"
+              className="text-xs md:text-sm uppercase tracking-[0.3em] md:tracking-[0.5em] font-medium opacity-60"
             >
-                Crafting Timeless Precision
+                Искусство Вечной Точности
             </motion.p>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
-          <div className="text-[10px] uppercase tracking-widest opacity-40">Scroll to Explore</div>
+          <div className="text-[10px] uppercase tracking-widest opacity-40 font-mono">Листайте вниз</div>
           <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
         </motion.div>
       </motion.div>
