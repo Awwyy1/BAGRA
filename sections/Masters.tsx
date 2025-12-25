@@ -3,11 +3,10 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const masters = [
-  { name: "САРКИС", role: "Мастер-барбер", img: "https://images.unsplash.com/photo-1593030103066-0093718efeb9?q=80&w=2080&auto=format&fit=crop" },
-  { name: "ЛЕВОН", role: "Архитектор стиля", img: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=2080&auto=format&fit=crop" },
-  { name: "АНДРАНИК", role: "Специалист по бороде", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2187&auto=format&fit=crop" },
-  { name: "ДАВИД", role: "Классические стрижки", img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=2048&auto=format&fit=crop" },
-  { name: "АРМЕН", role: "Визуальный художник", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2187&auto=format&fit=crop" },
+  { name: "ФАРА", role: "Про-барбер", img: "https://images.unsplash.com/photo-1593030103066-0093718efeb9?q=80&w=2080&auto=format&fit=crop" },
+  { name: "ОСКАР", role: "Бренд-барбер", img: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=2080&auto=format&fit=crop" },
+  { name: "АЗА", role: "Бренд-барбер", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2187&auto=format&fit=crop" },
+  { name: "ИСАК", role: "Босс-барбер", img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=2048&auto=format&fit=crop" },
 ];
 
 export const Masters: React.FC = () => {
@@ -81,7 +80,7 @@ export const Masters: React.FC = () => {
           <div className="px-24 mb-12">
             <h2 className="text-[12vw] font-black tracking-tighter leading-none opacity-10 font-heading">МАСТЕРА</h2>
             <div className="absolute top-1/2 left-24 -translate-y-1/2 z-10 pointer-events-none">
-              <p className="text-2xl font-light max-w-sm">Руки, которые задают стандарт.</p>
+              <p className="text-2xl font-light max-w-sm">Которые задают стандарт.</p>
             </div>
           </div>
 
