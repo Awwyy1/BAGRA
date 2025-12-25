@@ -28,25 +28,27 @@ export const Contact: React.FC = () => {
 
             <div className="pt-8 md:pt-12">
                 <Magnetic strength={0.3}>
-                    <motion.button
+                    <motion.a
+                        href="https://n49534.yclients.com/company/67283/personal/select-master?o="
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="group relative px-10 md:px-20 py-5 md:py-8 bg-white text-black text-[10px] md:text-xs uppercase font-bold tracking-[0.2em] md:tracking-[0.3em] rounded-full overflow-hidden"
+                        className="group relative px-10 md:px-20 py-5 md:py-8 bg-white text-black text-[10px] md:text-xs uppercase font-bold tracking-[0.2em] md:tracking-[0.3em] rounded-full overflow-hidden inline-block"
                         data-cursor="text"
                         data-cursor-text="ЗАПИСЬ"
                     >
                         <span className="relative z-10">Забронировать</span>
                         <motion.div className="absolute inset-0 bg-gray-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                    </motion.button>
+                    </motion.a>
                 </Magnetic>
             </div>
         </div>
 
         <div className="absolute bottom-8 md:bottom-20 w-full px-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 opacity-40">
             <div className="flex gap-6 md:gap-12 text-[10px] uppercase tracking-widest font-bold font-mono">
-                <a href="#" className="hover:text-white transition-colors">Instagram</a>
-                <a href="#" className="hover:text-white transition-colors">Telegram</a>
-                <a href="#" className="hover:text-white transition-colors">WhatsApp</a>
+                <a href="https://www.instagram.com/bagrat_team_" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+                <a href="https://wa.me/79639655444" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
             </div>
 
             <div className="text-[10px] uppercase tracking-widest font-bold text-center md:text-right font-mono">
