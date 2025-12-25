@@ -18,15 +18,6 @@ export const Hero: React.FC = () => {
 
   return (
     <section ref={ref} className="relative min-h-[100vh] w-full overflow-hidden flex flex-col justify-center">
-      {/* Background Deep Lines */}
-      <motion.div
-        style={{ y: layer1Y, opacity }}
-        className="absolute inset-0 flex items-center justify-center opacity-10"
-      >
-        <div className="w-[80vw] h-[1px] bg-white absolute rotate-45" />
-        <div className="w-[80vw] h-[1px] bg-white absolute -rotate-45" />
-      </motion.div>
-
       {/* Background Image - Blurred Portrait */}
       <motion.div
         style={{ y: layer2Y, scale, opacity }}
@@ -40,14 +31,6 @@ export const Hero: React.FC = () => {
            />
            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A0A]/40 to-[#0A0A0A]" />
         </div>
-      </motion.div>
-
-      {/* Mid Layer - Abstract shapes */}
-      <motion.div
-        style={{ y: layer3Y, opacity }}
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-      >
-        <div className="w-[30vw] aspect-square border border-white/10 rounded-full" />
       </motion.div>
 
       {/* Front Layer - Typography */}

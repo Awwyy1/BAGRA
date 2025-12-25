@@ -17,7 +17,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full p-6 md:p-8 md:px-12 md:py-10 z-[150] flex justify-between items-center pointer-events-none bg-black/90 backdrop-blur-sm">
+      <nav className="fixed top-0 left-0 w-full p-4 md:p-6 md:px-12 z-[150] flex justify-between items-center pointer-events-none bg-black/40 backdrop-blur-sm">
         {/* Logo */}
         <motion.div
           className="pointer-events-auto flex-1 md:flex-none"
@@ -91,15 +91,15 @@ export const Navigation: React.FC = () => {
             aria-label="Открыть меню"
           >
             {/* Crosshair lines */}
-            <div className="absolute w-full h-[1px] bg-white opacity-40" />
-            <div className="absolute h-full w-[1px] bg-white opacity-40" />
+            <div className="absolute w-full h-[1px] bg-red-500 opacity-60" />
+            <div className="absolute h-full w-[1px] bg-red-500 opacity-60" />
             {/* Inner target circle */}
             <motion.div
-              animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.8, 0.4] }}
+              animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-4 h-4 border border-white rounded-full flex items-center justify-center"
+              className="w-4 h-4 border border-red-500 rounded-full flex items-center justify-center"
             >
-              <div className="w-1 h-1 bg-white rounded-full" />
+              <div className="w-1 h-1 bg-red-500 rounded-full" />
             </motion.div>
           </button>
         </div>
