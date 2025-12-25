@@ -6,7 +6,7 @@ const masters = [
   { name: "ФАРА", role: "Про-барбер", img: "https://images.unsplash.com/photo-1593030103066-0093718efeb9?q=80&w=2080&auto=format&fit=crop" },
   { name: "ОСКАР", role: "Бренд-барбер", img: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?q=80&w=2080&auto=format&fit=crop" },
   { name: "АЗА", role: "Бренд-барбер", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2187&auto=format&fit=crop" },
-  { name: "ИСАК", role: "Босс-барбер", img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=2048&auto=format&fit=crop" },
+  { name: "ИСАК", role: "Босс-барбер", img: "/images/masters/isak.jpg" },
 ];
 
 export const Masters: React.FC = () => {
