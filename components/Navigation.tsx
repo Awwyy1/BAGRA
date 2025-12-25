@@ -17,7 +17,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full p-4 md:p-6 md:px-12 z-[150] flex justify-between items-center pointer-events-none bg-black/40 backdrop-blur-sm">
+      <nav className="fixed top-0 left-0 w-full p-4 md:p-6 md:px-12 z-[150] flex justify-between items-center pointer-events-none bg-black/20 backdrop-blur-sm">
         {/* Logo */}
         <motion.div
           className="pointer-events-auto flex-1 md:flex-none"
