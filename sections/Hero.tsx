@@ -25,7 +25,7 @@ export const Hero: React.FC = () => {
       >
         <div className="w-full h-full relative opacity-40">
            <img
-            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop"
+            src="/images/philosophy/hero.jpg"
             className="w-full h-full object-cover grayscale brightness-50"
             alt="Hero BG"
            />
