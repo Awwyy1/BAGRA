@@ -3,12 +3,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const items = [
-    "https://images.unsplash.com/photo-1599351431247-f13150b0ad38?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1621605815841-aa88a8343111?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1512690118299-a91f04176161?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1622286332618-f2802b2c3063?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1620331713240-ed6041a57659?q=80&w=1000&auto=format&fit=crop"
+    "/images/gallery/1.jpg",
+    "/images/gallery/2.jpg",
+    "/images/gallery/3.jpg",
+    "/images/gallery/4.jpg",
+    "/images/gallery/5.jpg",
+    "/images/gallery/6.jpg"
 ];
 
 export const Gallery: React.FC = () => {
