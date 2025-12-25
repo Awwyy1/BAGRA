@@ -19,11 +19,11 @@ export const Contact: React.FC = () => {
                 viewport={{ once: true }}
                 className="text-4xl md:text-7xl lg:text-[10vw] font-black tracking-tighter leading-none font-heading"
             >
-                ВОЙДИ В<br/>КВАДРАТ.
+                МЕСТО<br/>СИЛЫ.
             </motion.h2>
 
             <p className="text-base md:text-lg lg:text-2xl font-light opacity-60 px-4">
-                Кресло ждёт твою следующую главу наследия.
+                Стрижем так, что хочется вернуться.
             </p>
 
             <div className="pt-8 md:pt-12">
@@ -52,7 +52,7 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="text-[10px] uppercase tracking-widest font-bold text-center md:text-right font-mono">
-                ул. Люксовая 12, Центр<br/>
+                Новозаводская улица, 2 к5р<br/>
                 Пн — Вс: 10:00 — 22:00
             </div>
         </div>
