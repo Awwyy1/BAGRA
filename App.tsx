@@ -83,9 +83,9 @@ const App: React.FC = () => {
             <motion.div
               animate={{ opacity: [0, 1, 0.5, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="text-[10px] tracking-[2.5em] font-light text-white ml-[2.5em]"
+              className="text-[10px] tracking-[1.5em] font-light text-white ml-[1.5em] font-heading"
             >
-              BAGRAT
+              БАГРАТ
             </motion.div>
           </motion.div>
         )}
@@ -104,8 +104,8 @@ const App: React.FC = () => {
       </main>
 
       <footer className="fixed bottom-0 left-0 w-full p-8 pointer-events-none z-40 flex justify-between items-end opacity-20 hidden md:flex">
-        <div className="text-[10px] tracking-widest uppercase">Precision & Legacy</div>
-        <div className="text-[10px] tracking-widest uppercase">EST. 2024</div>
+        <div className="text-[10px] tracking-widest uppercase font-mono">Точность & Наследие</div>
+        <div className="text-[10px] tracking-widest uppercase font-mono">С 2024</div>
       </footer>
     </div>
   );
