@@ -85,7 +85,7 @@ export const Navigation: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-[#0A0A0A] z-[99] md:hidden flex flex-col items-center justify-center"
+            className="fixed inset-0 bg-black z-[99] md:hidden flex flex-col items-center justify-center"
           >
             <div className="flex flex-col items-center gap-8">
               {links.map((link, i) => (
