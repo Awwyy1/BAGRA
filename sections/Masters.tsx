@@ -35,7 +35,7 @@ export const Masters: React.FC = () => {
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className="px-4 mb-6">
             <h2 className="text-4xl font-black tracking-tighter leading-none opacity-10 mb-2 font-heading">МАСТЕРА</h2>
-            <p className="text-base font-light max-w-xs opacity-60">Которые задают стандарт.</p>
+            <p className="text-base font-light max-w-xs opacity-60">которые задают стандарт</p>
           </div>
 
           <motion.div style={{ x: mobileX }} className="flex">
@@ -79,7 +79,7 @@ export const Masters: React.FC = () => {
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className="px-24 mb-8">
             <h2 className="text-[12vw] font-black tracking-tighter leading-none opacity-10 font-heading">МАСТЕРА</h2>
-            <p className="text-2xl font-light max-w-sm mt-4 opacity-60">Которые задают стандарт.</p>
+            <p className="text-2xl font-light max-w-sm mt-4 opacity-60">которые задают стандарт</p>
           </div>
 
           <motion.div style={{ x }} className="flex gap-8 px-24">
