@@ -29,9 +29,9 @@ export const Masters: React.FC = () => {
   const mobileX = useTransform(mobileScrollProgress, [0, 1], ["0%", `-${(masters.length - 1) * 100}%`]);
 
   return (
-    <>
+    <div id="masters">
       {/* Mobile Version - Horizontal Scroll on Vertical Scroll */}
-      <section id="masters" ref={mobileRef} className="md:hidden relative h-[300vh] bg-[#0A0A0A]">
+      <section ref={mobileRef} className="md:hidden relative h-[300vh] bg-[#0A0A0A]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className="px-4 mb-6">
             <h2 className="text-4xl font-black tracking-tighter leading-none opacity-10 mb-2 font-heading">МАСТЕРА</h2>
@@ -100,6 +100,6 @@ export const Masters: React.FC = () => {
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
