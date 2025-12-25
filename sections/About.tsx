@@ -42,12 +42,12 @@ export const About: React.FC = () => {
           style={{ y: imgY }}
           className="relative aspect-[4/5] group order-1 md:order-2"
           data-cursor="text"
-          data-cursor-text="ФИЛОСОФИЯ"
+          data-cursor-text="ВАЙБ"
         >
           <img
             src="https://images.unsplash.com/photo-1621605815841-aa88a8343111?q=80&w=2070&auto=format&fit=crop"
             className="w-full h-full object-cover grayscale transition-transform duration-700 md:group-hover:scale-105"
-            alt="Философия"
+            alt="Вайб"
           />
           <div className="absolute inset-0 border border-white/5 m-2 md:m-4 pointer-events-none" />
           <div className="absolute top-0 right-0 p-4 md:p-8 text-[10px] uppercase tracking-widest opacity-20 font-mono">01 / Культура</div>
