@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export const CustomCursor: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   const [cursorType, setCursorType] = useState<'default' | 'hover' | 'text'>('default');
@@ -14,6 +15,26 @@ export const CustomCursor: React.FC = () => {
   const smoothY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    // Check if it's a touch device
+    const checkTouchDevice = () => {
+      setIsTouchDevice(
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(pointer: coarse)').matches
+      );
+    };
+
+    checkTouchDevice();
+    window.addEventListener('resize', checkTouchDevice);
+
+    return () => {
+      window.removeEventListener('resize', checkTouchDevice);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isTouchDevice) return;
+
     const moveCursor = (e: MouseEvent) => {
       if (!isVisible) setIsVisible(true);
       cursorX.set(e.clientX);
@@ -23,7 +44,7 @@ export const CustomCursor: React.FC = () => {
     const handleHover = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const hoverAttr = target?.closest ? target.closest('[data-cursor]') : null;
-      
+
       if (hoverAttr) {
         const type = hoverAttr.getAttribute('data-cursor') as any;
         const text = hoverAttr.getAttribute('data-cursor-text') || '';
@@ -42,13 +63,14 @@ export const CustomCursor: React.FC = () => {
       window.removeEventListener('mousemove', moveCursor);
       window.removeEventListener('mouseover', handleHover);
     };
-  }, [cursorX, cursorY, isVisible]);
+  }, [cursorX, cursorY, isVisible, isTouchDevice]);
 
-  if (!isVisible) return null;
+  // Don't render on touch devices or when not visible
+  if (isTouchDevice || !isVisible) return null;
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[10000] mix-blend-difference"
+      className="fixed top-0 left-0 pointer-events-none z-[10000] mix-blend-difference hidden md:block"
       style={{
         x: smoothX,
         y: smoothY,
