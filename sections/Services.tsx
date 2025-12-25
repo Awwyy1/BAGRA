@@ -118,7 +118,7 @@ export const Services: React.FC = () => {
               className="group relative grid grid-cols-[1.5fr_repeat(3,1fr)] md:grid-cols-[2fr_repeat(3,1fr)] items-center border-b border-white/5 py-5 md:py-6 px-2 hover:bg-white/[0.02] transition-colors duration-300"
               data-cursor="hover"
             >
-              <div className="text-[10px] md:text-sm font-bold tracking-tight pr-2 leading-tight">
+              <div className="text-[10px] md:text-sm font-bold tracking-tight pr-2 leading-tight" style={{ fontFamily: "'Manrope', sans-serif" }}>
                 <ScrambledText text={item.name} />
               </div>
 
