@@ -1,0 +1,90 @@
+
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+export const Hero: React.FC = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+
+  const layer1Y = useTransform(scrollYProgress, [0, 1], [0, -400]);
+  const layer2Y = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const layer3Y = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const layer4Y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+
+  return (
+    <section ref={ref} className="relative min-h-[100vh] w-full overflow-hidden flex flex-col justify-center">
+      {/* Background Deep Lines */}
+      <motion.div 
+        style={{ y: layer1Y, opacity }}
+        className="absolute inset-0 flex items-center justify-center opacity-10"
+      >
+        <div className="w-[80vw] h-[1px] bg-white absolute rotate-45" />
+        <div className="w-[80vw] h-[1px] bg-white absolute -rotate-45" />
+      </motion.div>
+
+      {/* Background Image - Blurred Portrait */}
+      <motion.div 
+        style={{ y: layer2Y, scale, opacity }}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        <div className="w-full h-full relative opacity-40">
+           <img 
+            src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" 
+            className="w-full h-full object-cover grayscale brightness-50"
+            alt="Hero BG"
+           />
+           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A0A]/40 to-[#0A0A0A]" />
+        </div>
+      </motion.div>
+
+      {/* Mid Layer - Abstract shapes */}
+      <motion.div 
+        style={{ y: layer3Y, opacity }}
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+      >
+        <div className="w-[30vw] aspect-square border border-white/10 rounded-full" />
+      </motion.div>
+
+      {/* Front Layer - Typography */}
+      <motion.div 
+        style={{ y: layer4Y, opacity }}
+        className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10"
+      >
+        <motion.h1 
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          className="text-[20vw] font-black tracking-tighter leading-[0.85] select-none"
+        >
+          BAGRAT
+        </motion.h1>
+        
+        <div className="overflow-hidden mt-8">
+            <motion.p 
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="text-xs md:text-sm uppercase tracking-[0.5em] font-light opacity-60"
+            >
+                Crafting Timeless Precision
+            </motion.p>
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+        >
+          <div className="text-[10px] uppercase tracking-widest opacity-40">Scroll to Explore</div>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};
