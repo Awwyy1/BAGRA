@@ -88,12 +88,12 @@ export const Services: React.FC = () => {
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none font-heading">ПРАЙС</h2>
             <div className="mt-4 flex items-center gap-4 text-[9px] md:text-[10px] uppercase tracking-[0.3em] opacity-40">
               <span className="w-8 h-[1px] bg-white" />
-              <span className="font-mono">Система_Онлайн / Баграт_Стандарт</span>
+              <span className="font-mono">Баграт_Стандарт</span>
             </div>
           </motion.div>
 
           <p className="max-w-[280px] text-[10px] md:text-xs uppercase tracking-[0.2em] opacity-40 leading-relaxed text-left">
-            Коллекция премиальных услуг мужского груминга для современной архитектуры стиля.
+            Коллекция премиальных услуг для мужского стиля.
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export const Services: React.FC = () => {
             Все процедуры включают премиум средства ухода
           </div>
           <div className="text-[7px] md:text-[8px] uppercase tracking-widest font-mono">
-            Обновлено: Октябрь 2024
+            Обновлено: Декабрь 2025
           </div>
         </div>
       </div>
