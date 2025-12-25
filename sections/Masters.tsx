@@ -12,40 +12,66 @@ const masters = [
 
 export const Masters: React.FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
+  const mobileRef = useRef<HTMLDivElement>(null);
 
+  // Desktop scroll
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end end"]
   });
 
+  // Mobile scroll
+  const { scrollYProgress: mobileScrollProgress } = useScroll({
+    target: mobileRef,
+    offset: ["start start", "end end"]
+  });
+
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const mobileX = useTransform(mobileScrollProgress, [0, 1], ["0%", `-${(masters.length - 1) * 100}%`]);
 
   return (
     <>
-      {/* Mobile Version - Vertical Scroll */}
-      <section id="masters" className="md:hidden relative bg-[#0A0A0A] py-20 px-4">
-        <div className="mb-12">
-          <h2 className="text-5xl font-black tracking-tighter leading-none opacity-10 mb-6">MASTERS</h2>
-          <p className="text-xl font-light max-w-sm">The hands that define the standard.</p>
-        </div>
+      {/* Mobile Version - Horizontal Scroll on Vertical Scroll */}
+      <section id="masters" ref={mobileRef} className="md:hidden relative h-[300vh] bg-[#0A0A0A]">
+        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+          <div className="px-4 mb-6">
+            <h2 className="text-4xl font-black tracking-tighter leading-none opacity-10 mb-2">MASTERS</h2>
+            <p className="text-base font-light max-w-xs">The hands that define the standard.</p>
+          </div>
 
-        <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
-          {masters.map((master, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="relative w-[160px] h-[220px] group overflow-hidden bg-[#111] snap-center flex-shrink-0 rounded-sm"
-            >
-              <img src={master.img} className="w-full h-full object-cover grayscale brightness-75" alt={master.name} />
-              <div className="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/90 to-transparent">
-                <h3 className="text-base font-bold tracking-tight">{master.name}</h3>
-                <p className="text-[8px] uppercase tracking-[0.2em] opacity-40">{master.role}</p>
+          <motion.div style={{ x: mobileX }} className="flex">
+            {masters.map((master, idx) => (
+              <div
+                key={idx}
+                className="relative w-screen h-[65vh] flex-shrink-0 px-4"
+              >
+                <div className="relative w-full h-full overflow-hidden bg-[#111] rounded-sm">
+                  <img src={master.img} className="w-full h-full object-cover grayscale brightness-75" alt={master.name} />
+                  <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent">
+                    <h3 className="text-2xl font-bold tracking-tight">{master.name}</h3>
+                    <p className="text-[10px] uppercase tracking-[0.3em] opacity-40">{master.role}</p>
+                  </div>
+                </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </motion.div>
+
+          {/* Progress indicator */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+            {masters.map((_, idx) => (
+              <motion.div
+                key={idx}
+                className="w-2 h-2 rounded-full bg-white/30"
+                style={{
+                  opacity: useTransform(
+                    mobileScrollProgress,
+                    [idx / masters.length, (idx + 0.5) / masters.length, (idx + 1) / masters.length],
+                    [0.3, 1, 0.3]
+                  )
+                }}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

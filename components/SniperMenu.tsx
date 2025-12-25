@@ -18,12 +18,12 @@ export const SniperMenu: React.FC<SniperMenuProps> = ({ isOpen, onClose, links }
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-[200] flex items-center justify-center p-6 md:hidden"
         >
-          {/* Backdrop with Blur */}
-          <motion.div 
-            initial={{ backdropFilter: 'blur(0px)', backgroundColor: 'rgba(10,10,10,0)' }}
-            animate={{ backdropFilter: 'blur(12px)', backgroundColor: 'rgba(10,10,10,0.9)' }}
-            exit={{ backdropFilter: 'blur(0px)', backgroundColor: 'rgba(10,10,10,0)' }}
-            className="absolute inset-0"
+          {/* Backdrop - Solid Black */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-black"
             onClick={onClose}
           />
 

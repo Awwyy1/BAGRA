@@ -12,7 +12,7 @@ export const Navigation: React.FC = () => {
     <>
       <nav className="fixed top-0 left-0 w-full p-6 md:p-8 md:px-12 md:py-10 z-[150] flex justify-between items-center pointer-events-none">
         {/* Logo */}
-        <motion.div 
+        <motion.div
           className="pointer-events-auto flex-1 md:flex-none"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -37,7 +37,7 @@ export const Navigation: React.FC = () => {
               </motion.a>
             </Magnetic>
           ))}
-          
+
           <Magnetic>
             <motion.button
               initial={{ opacity: 0, scale: 0.8 }}
@@ -54,15 +54,15 @@ export const Navigation: React.FC = () => {
         {/* Mobile Central "Breathing" Book Button */}
         <div className="md:hidden flex-1 flex justify-center pointer-events-auto">
           <motion.button
-            animate={{ 
+            animate={{
               opacity: [0.4, 1, 0.4],
               letterSpacing: ["0.2em", "0.4em", "0.2em"],
               scale: [0.98, 1, 0.98]
             }}
-            transition={{ 
-              duration: 3, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut"
             }}
             className="text-[9px] font-bold uppercase border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-sm"
           >
@@ -72,7 +72,7 @@ export const Navigation: React.FC = () => {
 
         {/* Mobile Tactical Trigger (Right) */}
         <div className="md:hidden pointer-events-auto flex-1 flex justify-end">
-          <button 
+          <button
             onClick={() => setIsMenuOpen(true)}
             className="relative w-10 h-10 flex items-center justify-center"
             aria-label="Open Tactical Menu"
@@ -81,7 +81,7 @@ export const Navigation: React.FC = () => {
             <div className="absolute w-full h-[1px] bg-white opacity-40" />
             <div className="absolute h-full w-[1px] bg-white opacity-40" />
             {/* Inner target circle */}
-            <motion.div 
+            <motion.div
               animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.8, 0.4] }}
               transition={{ duration: 2, repeat: Infinity }}
               className="w-4 h-4 border border-white rounded-full flex items-center justify-center"
@@ -92,10 +92,10 @@ export const Navigation: React.FC = () => {
         </div>
       </nav>
 
-      <SniperMenu 
-        isOpen={isMenuOpen} 
-        onClose={() => setIsMenuOpen(false)} 
-        links={links} 
+      <SniperMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+        links={links}
       />
     </>
   );
