@@ -112,8 +112,8 @@ export const Hero: React.FC = () => {
               transition={{ delay: 1.2 }}
               className="text-[7px] md:text-[9px] font-mono tracking-widest opacity-30 leading-relaxed uppercase text-left space-y-0.5 md:space-y-1"
             >
-              <p>ПРОФИЛЬ_ВЫРАВНЕН</p>
-              <p className="hidden md:block">ИНСТРУМЕНТ: СТЕРИЛЬНО</p>
+              <p>МАСТЕР: ВООРУЖЕН</p>
+              <p className="hidden md:block">ИНСТРУМЕНТ: СТЕРИЛЬНЫЙ</p>
               <p>ТОЧНОСТЬ: 100%</p>
             </motion.div>
           </div>
@@ -126,7 +126,7 @@ export const Hero: React.FC = () => {
                 className="text-[7px] md:text-[9px] font-mono tracking-widest opacity-30 uppercase"
               >
                 <span className="hidden md:inline">РЕЖИМ: </span>МАСТЕР-СЕРВИС<br/>
-                ЛОКАЦИЯ: ЦЕНТР
+                ЛОКАЦИЯ: ФИЛИ
              </motion.div>
           </div>
         </div>
