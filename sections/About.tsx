@@ -22,7 +22,7 @@ export const About: React.FC = () => {
         <div className="space-y-8 md:space-y-12 order-2 md:order-1">
             <motion.h2
               style={{ y: textY }}
-              className="text-5xl md:text-7xl lg:text-[9rem] font-bold tracking-tighter leading-[0.9] font-heading"
+              className="text-5xl md:text-7xl lg:text-[7.5rem] font-bold tracking-tighter leading-[1.05] font-heading"
             >
               2500+ <br/><span className="italic font-light opacity-50">Довольных</span><br/><span className="italic font-light opacity-50">Гостей</span>
             </motion.h2>
