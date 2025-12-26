@@ -105,7 +105,7 @@ export const Hero: React.FC = () => {
           ))}
 
           {/* Техническая информация (Кириллица) */}
-          <div className="absolute top-[8%] left-[8%]">
+          <div className="absolute top-[8%] left-[8%] md:top-[10%] md:left-[10%]">
             <motion.div
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 0.3, x: 0 }}
@@ -118,7 +118,7 @@ export const Hero: React.FC = () => {
             </motion.div>
           </div>
 
-          <div className="absolute bottom-[8%] right-[8%] text-right">
+          <div className="absolute bottom-[8%] right-[8%] md:bottom-[10%] md:right-[10%] text-right">
              <motion.div
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 0.3, x: 0 }}

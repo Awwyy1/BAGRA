@@ -52,7 +52,8 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="text-[10px] uppercase tracking-widest font-bold text-center md:text-right font-mono">
-                Новозаводская улица, 2 к5р<br/>
+                <a href="https://yandex.com.ge/maps/-/CLHGaN0T" target="_blank" rel="noopener noreferrer" className="md:hidden hover:text-white transition-colors underline underline-offset-2">Новозаводская улица, 2 к5р</a>
+                <span className="hidden md:inline">Новозаводская улица, 2 к5р</span><br/>
                 Пн — Вс: 10:00 — 22:00
             </div>
         </div>

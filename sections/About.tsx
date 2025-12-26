@@ -24,16 +24,16 @@ export const About: React.FC = () => {
               style={{ y: textY }}
               className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter leading-none font-heading"
             >
-              Без лишних <br/><span className="italic font-light opacity-50">Слов</span>
+              2500+ <br/><span className="italic font-light opacity-50">Довольных</span>
             </motion.h2>
 
             <motion.div className="space-y-6 md:space-y-8 max-w-lg">
                 <p className="text-lg md:text-xl lg:text-2xl font-light opacity-80 leading-relaxed">
-                  Мы фанатеем от точности линий, но терпеть не можем скуку.
+                  Здесь шутят, стригут и не душнят. Вайб, который хочется повторить.
                 </p>
                 <div className="h-[1px] w-20 bg-white/20" />
                 <p className="text-xs md:text-sm opacity-50 uppercase tracking-widest font-mono">
-                  Острые бритвы, прямые руки, никакой душноты.
+                  Крутые стрижки. Честные цены. Никакой скуки.
                 </p>
             </motion.div>
         </div>
