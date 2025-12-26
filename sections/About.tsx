@@ -45,7 +45,7 @@ export const About: React.FC = () => {
           data-cursor-text="ВАЙБ"
         >
           <img
-            src="https://images.unsplash.com/photo-1621605815841-aa88a8343111?q=80&w=2070&auto=format&fit=crop"
+            src="/images/philosophy/vibe.jpg"
             className="w-full h-full object-cover grayscale transition-transform duration-700 md:group-hover:scale-105"
             alt="Вайб"
           />
