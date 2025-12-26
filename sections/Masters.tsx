@@ -103,8 +103,7 @@ export const Masters: React.FC = () => {
               <div
                 key={idx}
                 className="relative min-w-[400px] h-[65vh] group overflow-hidden bg-[#111]"
-                data-cursor="text"
-                data-cursor-text="СМОТРЕТЬ"
+                data-cursor="hover"
               >
                 <img src={master.img} className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700" alt={master.name} />
                 <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent">
