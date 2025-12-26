@@ -24,7 +24,7 @@ export const About: React.FC = () => {
               style={{ y: textY }}
               className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.2] font-heading pr-4"
             >
-              2500+ <br/><span className="italic font-light opacity-50">Довольных</span><br/><span className="font-light opacity-50">Гостей</span>
+              2500+ <br/><span className="font-light opacity-50">Довольных</span><br/><span className="font-light opacity-50">Гостей</span>
             </motion.h2>
 
             <motion.div className="space-y-6 md:space-y-8 max-w-lg">
