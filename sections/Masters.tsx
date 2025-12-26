@@ -25,20 +25,31 @@ export const Masters: React.FC = () => {
     offset: ["start start", "end end"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-45%"]);
-  const mobileX = useTransform(mobileScrollProgress, [0, 1], ["0%", `-${(masters.length - 1) * 100}%`]);
+  // Smooth snap-like transform for desktop
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+
+  // Mobile - discrete steps for each master
+  const mobileX = useTransform(
+    mobileScrollProgress,
+    [0, 0.33, 0.66, 1],
+    ["0%", "-100%", "-200%", "-300%"]
+  );
 
   return (
     <div id="masters">
       {/* Mobile Version - Horizontal Scroll on Vertical Scroll */}
-      <section ref={mobileRef} className="md:hidden relative h-[300vh] bg-[#0A0A0A]">
+      <section ref={mobileRef} className="md:hidden relative h-[400vh] bg-[#0A0A0A]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className="px-4 mb-6">
             <h2 className="text-4xl font-black tracking-tighter leading-none opacity-10 mb-2 font-heading">МАСТЕРА</h2>
             <p className="text-base font-light max-w-xs opacity-60">которые задают стандарт</p>
           </div>
 
-          <motion.div style={{ x: mobileX }} className="flex">
+          <motion.div
+            style={{ x: mobileX }}
+            className="flex"
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
             {masters.map((master, idx) => (
               <div
                 key={idx}
@@ -82,7 +93,11 @@ export const Masters: React.FC = () => {
             <p className="text-2xl font-light max-w-sm mt-4 opacity-60">которые задают стандарт</p>
           </div>
 
-          <motion.div style={{ x }} className="flex gap-8 px-24">
+          <motion.div
+            style={{ x }}
+            className="flex gap-8 px-24"
+            transition={{ type: "tween", ease: "easeOut" }}
+          >
             {masters.map((master, idx) => (
               <div
                 key={idx}
