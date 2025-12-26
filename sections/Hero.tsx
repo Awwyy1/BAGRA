@@ -125,7 +125,7 @@ export const Hero: React.FC = () => {
                 transition={{ delay: 1.4 }}
                 className="text-[7px] md:text-[9px] font-mono tracking-widest opacity-30 uppercase"
               >
-                <span className="hidden md:inline">РЕЖИМ: </span>МАСТЕР-СЕРВИС<br/>
+                <span className="hidden md:inline">РЕЖИМ: </span>FREE ПАРКИНГ<br/>
                 ЛОКАЦИЯ: ФИЛИ
              </motion.div>
           </div>
