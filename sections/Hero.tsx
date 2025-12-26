@@ -93,7 +93,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 + i * 0.1, duration: 1.2, ease: "easeOut" }}
-              className="absolute w-14 h-14 md:w-24 md:h-24 border-t border-l border-white/25"
+              className="absolute w-14 h-14 md:w-24 md:h-24 border-t-[0.5px] border-l-[0.5px] border-white/25"
               style={{
                 top: i < 2 ? '5%' : 'auto',
                 bottom: i >= 2 ? '5%' : 'auto',
