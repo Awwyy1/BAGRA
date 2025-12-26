@@ -72,26 +72,8 @@ export const SniperMenu: React.FC<SniperMenuProps> = ({ isOpen, onClose, links }
             </motion.div>
           </div>
 
-          {/* Tactical Corners */}
-          {[0, 90, 180, 270].map((rotation, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="absolute w-12 h-12 border-t-2 border-l-2 border-white/40 pointer-events-none"
-              style={{
-                top: i < 2 ? '15%' : 'auto',
-                bottom: i >= 2 ? '15%' : 'auto',
-                left: i === 0 || i === 3 ? '10%' : 'auto',
-                right: i === 1 || i === 2 ? '10%' : 'auto',
-                rotate: `${rotation}deg`
-              }}
-            />
-          ))}
-
           {/* Menu Content */}
           <div className="relative z-10 flex flex-col items-center justify-center w-full">
-            <div className="mb-8 text-[10px] tracking-[0.5em] uppercase opacity-40 font-bold font-mono">Цель_Захвачена</div>
             <nav className="flex flex-col items-center gap-6 w-full">
               {links.map((link, i) => (
                 <motion.a

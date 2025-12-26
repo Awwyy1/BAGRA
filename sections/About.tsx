@@ -24,16 +24,16 @@ export const About: React.FC = () => {
               style={{ y: textY }}
               className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter leading-none font-heading"
             >
-              За гранью <br/><span className="italic font-light opacity-50">Отражений</span>
+              Без лишних <br/><span className="italic font-light opacity-50">Слов</span>
             </motion.h2>
 
             <motion.div className="space-y-6 md:space-y-8 max-w-lg">
                 <p className="text-lg md:text-xl lg:text-2xl font-light opacity-80 leading-relaxed">
-                  В мире быстрых трендов мы следуем вечному. Баграт — это больше, чем стрижка. Это выверенный опыт мужской элегантности.
+                  Мы фанатеем от точности линий, но терпеть не можем скуку.
                 </p>
                 <div className="h-[1px] w-20 bg-white/20" />
                 <p className="text-xs md:text-sm opacity-50 uppercase tracking-widest font-mono">
-                  Наше наследие — острейшие лезвия и глубочайшая тишина.
+                  Острые бритвы, прямые руки, никакой душноты.
                 </p>
             </motion.div>
         </div>
