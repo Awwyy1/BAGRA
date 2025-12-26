@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
       {/* Основной HUD-интерфейс (Sniper View) */}
       <motion.div
         style={{ scale: hudScale, opacity }}
-        className="relative z-30 w-full max-w-4xl aspect-square md:aspect-video flex items-center justify-center px-4"
+        className="relative z-30 w-full max-w-4xl aspect-square md:aspect-video flex items-center justify-center px-4 -mt-16 md:mt-0"
       >
         <div className="relative w-full h-full flex items-center justify-center">
 
@@ -140,20 +140,9 @@ export const Hero: React.FC = () => {
           className="absolute bottom-[-100px] md:bottom-[-120px] text-center w-full"
         >
           <span className="text-[10px] md:text-[14px] uppercase font-light text-white tracking-[0.5em] md:tracking-[0.8em]">
-            Искусство абсолютной точности
+            раздаем мужское
           </span>
         </motion.div>
-      </motion.div>
-
-      
-      {/* Индикатор готовности к скроллу */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ delay: 2.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30"
-      >
-        <div className="w-[1px] h-16 bg-gradient-to-b from-white via-white/20 to-transparent" />
       </motion.div>
     </section>
   );
