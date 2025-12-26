@@ -9,55 +9,156 @@ export const Hero: React.FC = () => {
     offset: ["start start", "end start"]
   });
 
-  const layer1Y = useTransform(scrollYProgress, [0, 1], [0, -400]);
-  const layer2Y = useTransform(scrollYProgress, [0, 1], [0, -300]);
-  const layer3Y = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const layer4Y = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  const hudScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 150]);
 
   return (
-    <section ref={ref} className="relative min-h-[100vh] w-full overflow-hidden flex flex-col justify-center">
-      {/* Background Image - Blurred Portrait */}
-      <motion.div
-        style={{ y: layer2Y, scale, opacity }}
-        className="absolute inset-0 flex items-center justify-center"
-      >
-        <div className="w-full h-full relative opacity-40">
+    <section ref={ref} className="relative min-h-[100vh] w-full overflow-hidden flex flex-col items-center justify-center bg-[#0A0A0A]">
+
+      {/* Фоновый кинематографичный слой */}
+      <motion.div style={{ opacity }} className="absolute inset-0 z-0">
+        <div className="w-full h-full relative opacity-[0.15]">
            <img
             src="/images/philosophy/hero.jpg"
             className="w-full h-full object-cover grayscale brightness-50"
-            alt="Hero BG"
+            alt="Hero Background"
            />
-           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A0A]/40 to-[#0A0A0A]" />
+           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
         </div>
       </motion.div>
 
-      {/* Front Layer - Typography */}
+      {/* Основной HUD-интерфейс (Sniper View) */}
       <motion.div
-        style={{ y: layer4Y, opacity }}
-        className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 z-10"
+        style={{ scale: hudScale, opacity }}
+        className="relative z-30 w-full max-w-4xl aspect-square md:aspect-video flex items-center justify-center px-4"
       >
-        <div className="overflow-hidden">
-            <motion.p
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="text-sm md:text-lg uppercase tracking-[0.3em] md:tracking-[0.5em] font-medium opacity-80"
+        <div className="relative w-full h-full flex items-center justify-center">
+
+          {/* 1. Направляющие оси (Перекрестие) */}
+          <motion.div
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute left-1/2 top-0 w-[0.5px] h-full bg-white/10 -translate-x-1/2"
+          />
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-1/2 left-0 w-full h-[0.5px] bg-white/10 -translate-y-1/2"
+          />
+
+          {/* 2. Вращающиеся элементы (Орбиты) */}
+          <div className="relative w-[75vw] md:w-[450px] aspect-square flex items-center justify-center">
+            {/* Внешнее кольцо с маркером */}
+            <motion.div
+              initial={{ rotate: 0, opacity: 0, scale: 0.8 }}
+              animate={{ rotate: 360, opacity: 1, scale: 1 }}
+              transition={{
+                rotate: { duration: 40, repeat: Infinity, ease: "linear" },
+                opacity: { duration: 1.2 },
+                scale: { duration: 1.2 }
+              }}
+              className="absolute inset-0 border border-white/5 rounded-full"
             >
-                Искусство абсолютной точности
-            </motion.p>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-6 bg-white/30" />
+            </motion.div>
+
+            {/* Внутреннее прерывистое кольцо */}
+            <motion.div
+              initial={{ rotate: 0, opacity: 0 }}
+              animate={{ rotate: -360, opacity: 1 }}
+              transition={{
+                rotate: { duration: 25, repeat: Infinity, ease: "linear" },
+                opacity: { duration: 1.5 }
+              }}
+              className="absolute inset-12 border-t border-b border-white/20 rounded-full"
+            />
+
+            {/* Центральная точка с эффектом пульсации */}
+            <motion.div
+              animate={{ scale: [1, 1.15, 1], opacity: [0.1, 0.3, 0.1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center"
+            >
+              <div className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.6)]" />
+            </motion.div>
+          </div>
+
+          {/* 3. Тактические угловые скобки */}
+          {[0, 90, 180, 270].map((rotation, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 + i * 0.1, duration: 1.2, ease: "easeOut" }}
+              className="absolute w-14 h-14 md:w-24 md:h-24 border-t border-l border-white/25"
+              style={{
+                top: i < 2 ? '5%' : 'auto',
+                bottom: i >= 2 ? '5%' : 'auto',
+                left: i === 0 || i === 3 ? '5%' : 'auto',
+                right: i === 1 || i === 2 ? '5%' : 'auto',
+                rotate: `${rotation}deg`
+              }}
+            />
+          ))}
+
+          {/* Техническая информация (Кириллица) */}
+          <div className="absolute top-[8%] left-[8%] hidden md:block">
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 0.3, x: 0 }}
+              transition={{ delay: 1.2 }}
+              className="text-[9px] font-mono tracking-widest opacity-30 leading-relaxed uppercase text-left space-y-1"
+            >
+              <p>ПРОФИЛЬ_ВЫРАВНЕН</p>
+              <p>ИНСТРУМЕНТ: СТЕРИЛЬНО</p>
+              <p>ТОЧНОСТЬ_СРЕЗА: 100%</p>
+            </motion.div>
+          </div>
+
+          <div className="absolute bottom-[8%] right-[8%] hidden md:block text-right">
+             <motion.div
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 0.3, x: 0 }}
+                transition={{ delay: 1.4 }}
+                className="text-[9px] font-mono tracking-widest opacity-30 uppercase"
+              >
+                РЕЖИМ: МАСТЕР-СЕРВИС<br/>
+                ЛОКАЦИЯ: ЦЕНТР
+             </motion.div>
+          </div>
         </div>
 
+        {/* Главный текстовый слоган под HUD */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+          style={{ y: textY }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 0.6, y: 0 }}
+          transition={{ delay: 1.8, duration: 1.5 }}
+          className="absolute bottom-[-100px] md:bottom-[-120px] text-center w-full"
         >
-          <div className="text-[10px] uppercase tracking-widest opacity-40 font-mono">Листайте вниз</div>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent" />
+          <span className="text-[10px] md:text-[14px] uppercase font-light text-white tracking-[0.5em] md:tracking-[0.8em]">
+            Искусство абсолютной точности
+          </span>
         </motion.div>
+      </motion.div>
+
+      {/* Декоративные элементы фона */}
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none opacity-5 px-10 flex justify-between items-center z-10">
+        <div className="w-[1px] h-[40vh] bg-white" />
+        <div className="w-[1px] h-[40vh] bg-white" />
+      </div>
+
+      {/* Индикатор готовности к скроллу */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+        transition={{ delay: 2.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30"
+      >
+        <div className="w-[1px] h-16 bg-gradient-to-b from-white via-white/20 to-transparent" />
       </motion.div>
     </section>
   );
