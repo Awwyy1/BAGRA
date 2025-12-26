@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
           />
 
           {/* 2. Вращающиеся элементы (Орбиты) */}
-          <div className="relative w-[75vw] md:w-[450px] aspect-square flex items-center justify-center">
+          <div className="relative w-[65vw] md:w-[400px] aspect-square flex items-center justify-center">
             {/* Внешнее кольцо с маркером */}
             <motion.div
               initial={{ rotate: 0, opacity: 0, scale: 0.8 }}
@@ -145,12 +145,7 @@ export const Hero: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/* Декоративные элементы фона */}
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 pointer-events-none opacity-5 px-10 flex justify-between items-center z-10">
-        <div className="w-[1px] h-[40vh] bg-white" />
-        <div className="w-[1px] h-[40vh] bg-white" />
-      </div>
-
+      
       {/* Индикатор готовности к скроллу */}
       <motion.div
         initial={{ opacity: 0 }}

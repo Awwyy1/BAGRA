@@ -5,19 +5,19 @@ import { Magnetic } from '../components/Magnetic';
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="relative min-h-screen w-full bg-[#0F0F0F] flex flex-col items-center justify-center px-4 md:px-8 py-20 overflow-hidden">
+    <section id="contact" className="relative min-h-[80vh] md:min-h-screen w-full bg-[#0F0F0F] flex flex-col items-center justify-center px-4 md:px-8 py-12 md:py-20 overflow-hidden">
         {/* Decorative Background Text */}
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none select-none">
             <h2 className="text-[30vw] md:text-[40vw] font-black tracking-tighter font-heading">ЗАПИСЬ</h2>
         </div>
 
-        <div className="relative z-10 text-center space-y-8 md:space-y-12 max-w-4xl">
+        <div className="relative z-10 text-center space-y-6 md:space-y-12 max-w-4xl">
             <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-7xl lg:text-[10vw] font-black tracking-tighter leading-none font-heading"
+                className="text-5xl md:text-7xl lg:text-[10vw] font-black tracking-tighter leading-none font-heading"
             >
                 МЕСТО<br/>СИЛЫ.
             </motion.h2>
@@ -26,7 +26,7 @@ export const Contact: React.FC = () => {
                 Стрижем так, что хочется вернуться.
             </p>
 
-            <div className="pt-8 md:pt-12">
+            <div className="pt-6 md:pt-12">
                 <Magnetic strength={0.3}>
                     <motion.a
                         href="https://n49534.yclients.com/company/67283/personal/select-master?o="
@@ -45,7 +45,7 @@ export const Contact: React.FC = () => {
             </div>
         </div>
 
-        <div className="absolute bottom-8 md:bottom-20 w-full px-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 opacity-40">
+        <div className="absolute bottom-6 md:bottom-20 w-full px-4 md:px-12 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8 opacity-40">
             <div className="flex gap-6 md:gap-12 text-[10px] uppercase tracking-widest font-bold font-mono">
                 <a href="https://www.instagram.com/bagrat_team_" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
                 <a href="https://wa.me/79639655444" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>

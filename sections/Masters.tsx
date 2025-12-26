@@ -25,20 +25,21 @@ export const Masters: React.FC = () => {
     offset: ["start start", "end end"]
   });
 
-  // Smooth snap-like transform for desktop
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  // Desktop: scroll exactly 3 cards worth (to show 4th as last)
+  // 4 cards total, each ~25% of row, move 3 cards = -75% but stop early to avoid empty space
+  const x = useTransform(scrollYProgress, [0, 0.9], ["0%", "-52%"]);
 
-  // Mobile - discrete steps for each master
+  // Mobile: smooth scroll through all 4 masters (0 to -300% for 4 cards)
   const mobileX = useTransform(
     mobileScrollProgress,
-    [0, 0.33, 0.66, 1],
-    ["0%", "-100%", "-200%", "-300%"]
+    [0, 1],
+    ["0%", "-300%"]
   );
 
   return (
     <div id="masters">
       {/* Mobile Version - Horizontal Scroll on Vertical Scroll */}
-      <section ref={mobileRef} className="md:hidden relative h-[400vh] bg-[#0A0A0A]">
+      <section ref={mobileRef} className="md:hidden relative h-[350vh] bg-[#0A0A0A]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className="px-4 mb-6">
             <h2 className="text-4xl font-black tracking-tighter leading-none opacity-10 mb-2 font-heading">МАСТЕРА</h2>
@@ -86,7 +87,7 @@ export const Masters: React.FC = () => {
       </section>
 
       {/* Desktop Version - Horizontal Scroll on Vertical Scroll */}
-      <section ref={targetRef} className="hidden md:block relative h-[300vh] bg-[#0A0A0A]">
+      <section ref={targetRef} className="hidden md:block relative h-[250vh] bg-[#0A0A0A]">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className="px-24 mb-8">
             <h2 className="text-[12vw] font-black tracking-tighter leading-none opacity-10 font-heading">МАСТЕРА</h2>

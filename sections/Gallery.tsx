@@ -13,7 +13,7 @@ const items = [
 
 export const Gallery: React.FC = () => {
   return (
-    <section id="gallery" className="relative w-full py-20 md:py-40 bg-[#0A0A0A] overflow-hidden">
+    <section id="gallery" className="relative w-full py-12 md:py-40 bg-[#0A0A0A] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 lg:gap-16">
           {items.map((src, idx) => (
