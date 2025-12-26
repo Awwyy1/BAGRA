@@ -31,7 +31,7 @@ export const Hero: React.FC = () => {
       {/* Основной HUD-интерфейс (Sniper View) */}
       <motion.div
         style={{ scale: hudScale, opacity }}
-        className="relative z-30 w-full max-w-4xl aspect-square md:aspect-video flex items-center justify-center px-4 -mt-16 md:mt-0"
+        className="relative z-30 w-full max-w-4xl aspect-square md:aspect-video flex items-center justify-center px-4 -mt-24 md:mt-0"
       >
         <div className="relative w-full h-full flex items-center justify-center">
 
@@ -105,27 +105,27 @@ export const Hero: React.FC = () => {
           ))}
 
           {/* Техническая информация (Кириллица) */}
-          <div className="absolute top-[8%] left-[8%] hidden md:block">
+          <div className="absolute top-[8%] left-[8%]">
             <motion.div
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 0.3, x: 0 }}
               transition={{ delay: 1.2 }}
-              className="text-[9px] font-mono tracking-widest opacity-30 leading-relaxed uppercase text-left space-y-1"
+              className="text-[7px] md:text-[9px] font-mono tracking-widest opacity-30 leading-relaxed uppercase text-left space-y-0.5 md:space-y-1"
             >
               <p>ПРОФИЛЬ_ВЫРАВНЕН</p>
-              <p>ИНСТРУМЕНТ: СТЕРИЛЬНО</p>
-              <p>ТОЧНОСТЬ_СРЕЗА: 100%</p>
+              <p className="hidden md:block">ИНСТРУМЕНТ: СТЕРИЛЬНО</p>
+              <p>ТОЧНОСТЬ: 100%</p>
             </motion.div>
           </div>
 
-          <div className="absolute bottom-[8%] right-[8%] hidden md:block text-right">
+          <div className="absolute bottom-[8%] right-[8%] text-right">
              <motion.div
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 0.3, x: 0 }}
                 transition={{ delay: 1.4 }}
-                className="text-[9px] font-mono tracking-widest opacity-30 uppercase"
+                className="text-[7px] md:text-[9px] font-mono tracking-widest opacity-30 uppercase"
               >
-                РЕЖИМ: МАСТЕР-СЕРВИС<br/>
+                <span className="hidden md:inline">РЕЖИМ: </span>МАСТЕР-СЕРВИС<br/>
                 ЛОКАЦИЯ: ЦЕНТР
              </motion.div>
           </div>
