@@ -105,7 +105,7 @@ const App: React.FC = () => {
 
       <footer className="fixed bottom-0 left-0 w-full p-8 pointer-events-none z-40 flex justify-between items-end opacity-20 hidden md:flex">
         <div className="text-[10px] tracking-widest uppercase font-mono">Точность & Характер</div>
-        <div className="text-[10px] tracking-widest uppercase font-mono">С 2025</div>
+        <div className="text-[10px] tracking-widest uppercase font-mono">ОСН. 2025</div>
       </footer>
     </div>
   );
