@@ -22,13 +22,13 @@ export const About: React.FC = () => {
         <div className="space-y-8 md:space-y-12 order-2 md:order-1">
             <motion.h2
               style={{ y: textY }}
-              className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter leading-none font-heading"
+              className="text-5xl md:text-7xl lg:text-[9rem] font-bold tracking-tighter leading-[0.9] font-heading"
             >
-              2500+ <br/><span className="italic font-light opacity-50">Довольных</span>
+              2500+ <br/><span className="italic font-light opacity-50">Довольных</span><br/><span className="italic font-light opacity-50">Гостей</span>
             </motion.h2>
 
             <motion.div className="space-y-6 md:space-y-8 max-w-lg">
-                <p className="text-lg md:text-xl lg:text-2xl font-light opacity-80 leading-relaxed">
+                <p className="text-xl md:text-2xl lg:text-3xl font-light opacity-80 leading-relaxed">
                   Здесь шутят, стригут и не душнят. Вайб, который хочется повторить.
                 </p>
                 <div className="h-[1px] w-20 bg-white/20" />
