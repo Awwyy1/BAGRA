@@ -31,8 +31,8 @@ export const Masters: React.FC = () => {
           <p className="text-base md:text-2xl font-light max-w-sm mt-2 md:mt-4 opacity-60">которые задают стандарт</p>
         </div>
 
-        {/* Masters Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {/* Masters Grid - 1 column on mobile, 4 on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-6">
           {masters.map((master, idx) => (
             <motion.div
               key={idx}
@@ -48,15 +48,15 @@ export const Masters: React.FC = () => {
                 className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700"
                 alt={master.name}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 bg-gradient-to-t from-black/90 to-transparent">
+              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 bg-gradient-to-t from-black/90 to-transparent">
                 <div className="flex justify-between items-end">
                   <div>
-                    <h3 className="text-lg md:text-2xl font-bold tracking-tight font-heading">{master.name}</h3>
-                    <p className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] opacity-40 font-mono">{master.role}</p>
+                    <h3 className="text-xl md:text-2xl font-bold tracking-tight font-heading">{master.name}</h3>
+                    <p className="text-[10px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] opacity-40 font-mono">{master.role}</p>
                   </div>
-                  <div className="flex flex-col items-end gap-0.5">
+                  <div className="flex items-center gap-2">
                     <FiveStars />
-                    <span className="text-[8px] md:text-[10px] font-mono opacity-50">{master.reviews}</span>
+                    <span className="text-[10px] md:text-[10px] font-mono opacity-50">{master.reviews}</span>
                   </div>
                 </div>
               </div>

@@ -137,9 +137,9 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.6, y: 0 }}
           transition={{ delay: 1.8, duration: 1.5 }}
-          className="absolute bottom-[-100px] md:bottom-[-120px] text-center w-full"
+          className="absolute bottom-[-100px] md:bottom-[-120px] w-full flex justify-center"
         >
-          <span className="text-[10px] md:text-[14px] uppercase font-light text-white tracking-[0.5em] md:tracking-[0.8em]">
+          <span className="text-[10px] md:text-[14px] uppercase font-light text-white tracking-[0.5em] md:tracking-[0.8em] pl-[0.5em] md:pl-[0.8em]">
             раздаем мужское
           </span>
         </motion.div>
