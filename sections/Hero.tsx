@@ -139,8 +139,8 @@ export const Hero: React.FC = () => {
           transition={{ delay: 1.8, duration: 1.5 }}
           className="absolute bottom-[-100px] md:bottom-[-120px] text-center w-full"
         >
-          <span className="text-[10px] md:text-[14px] uppercase font-light text-white tracking-[0.5em] md:tracking-[0.8em]">
-            раздаем мужское
+          <span className="text-[10px] md:text-[14px] uppercase font-light text-white tracking-[0.5em] md:tracking-[0.8em] ml-[0.5em] md:ml-[0.8em]">
+            мужское раздаем
           </span>
         </motion.div>
       </motion.div>
