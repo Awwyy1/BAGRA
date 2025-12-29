@@ -1,6 +1,51 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+
+// Компонент снежинки
+const Snowflake: React.FC<{ delay: number; duration: number; left: string; size: number }> = ({ delay, duration, left, size }) => (
+  <motion.div
+    className="absolute top-0 rounded-full bg-white pointer-events-none"
+    style={{
+      left,
+      width: size,
+      height: size,
+      filter: `blur(${size > 3 ? 1 : 0}px)`,
+    }}
+    initial={{ y: -20, opacity: 0 }}
+    animate={{
+      y: '100vh',
+      opacity: [0, 1, 1, 0],
+    }}
+    transition={{
+      duration,
+      delay,
+      repeat: Infinity,
+      ease: 'linear',
+    }}
+  />
+);
+
+// Компонент снегопада
+const Snowfall: React.FC = () => {
+  const snowflakes = useMemo(() => {
+    return Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      delay: Math.random() * 5,
+      duration: 8 + Math.random() * 8,
+      left: `${Math.random() * 100}%`,
+      size: 2 + Math.random() * 4,
+    }));
+  }, []);
+
+  return (
+    <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+      {snowflakes.map((flake) => (
+        <Snowflake key={flake.id} {...flake} />
+      ))}
+    </div>
+  );
+};
 
 export const Hero: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -15,6 +60,9 @@ export const Hero: React.FC = () => {
 
   return (
     <section ref={ref} className="relative min-h-[100vh] w-full overflow-hidden flex flex-col items-center justify-center bg-[#0A0A0A]">
+
+      {/* Снегопад */}
+      <Snowfall />
 
       {/* Фоновый кинематографичный слой */}
       <motion.div style={{ opacity }} className="absolute inset-0 z-0">
