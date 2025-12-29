@@ -70,14 +70,14 @@ export const Masters: React.FC = () => {
               >
                 <div className="relative w-full h-full overflow-hidden bg-[#111] rounded-sm">
                   <img src={master.img} className="w-full h-full object-cover grayscale brightness-75" alt={master.name} />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent flex justify-between items-end">
-                    <div>
-                      <h3 className="text-2xl font-bold tracking-tight font-heading">{master.name}</h3>
-                      <p className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-mono">{master.role}</p>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <FiveStars />
-                      <span className="text-[9px] font-mono opacity-50">{master.reviews}</span>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
+                    <h3 className="text-2xl font-bold tracking-tight font-heading mb-1">{master.name}</h3>
+                    <div className="flex items-center justify-between">
+                      <p className="text-[9px] uppercase tracking-[0.2em] opacity-40 font-mono">{master.role}</p>
+                      <div className="flex items-center gap-1">
+                        <FiveStars />
+                        <span className="text-[8px] font-mono opacity-50">{master.reviews}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -124,14 +124,14 @@ export const Masters: React.FC = () => {
                 data-cursor="hover"
               >
                 <img src={master.img} className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700" alt={master.name} />
-                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent flex justify-between items-end">
-                  <div>
-                    <h3 className="text-3xl font-bold tracking-tight font-heading">{master.name}</h3>
+                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent">
+                  <h3 className="text-3xl font-bold tracking-tight font-heading mb-2">{master.name}</h3>
+                  <div className="flex items-center justify-between">
                     <p className="text-[10px] uppercase tracking-[0.3em] opacity-40 font-mono">{master.role}</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FiveStars />
-                    <span className="text-[11px] font-mono opacity-50">{master.reviews}</span>
+                    <div className="flex items-center gap-2">
+                      <FiveStars />
+                      <span className="text-[11px] font-mono opacity-50">{master.reviews}</span>
+                    </div>
                   </div>
                 </div>
               </div>
