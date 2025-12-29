@@ -43,10 +43,10 @@ const Snowflake: React.FC<{ delay: number; duration: number; left: string; size:
 // Компонент снегопада
 const Snowfall: React.FC = () => {
   const snowflakes = useMemo(() => {
-    return Array.from({ length: 60 }, (_, i) => ({
+    return Array.from({ length: 54 }, (_, i) => ({
       id: i,
-      delay: Math.random() * 5,
-      duration: 10 + Math.random() * 10,
+      delay: (i / 54) * 15, // Равномерное распределение по времени
+      duration: 12 + Math.random() * 8,
       left: `${Math.random() * 100}%`,
       size: 2 + Math.random() * 4,
     }));
