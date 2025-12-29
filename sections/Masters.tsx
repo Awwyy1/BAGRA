@@ -49,7 +49,7 @@ export const Masters: React.FC = () => {
                 alt={master.name}
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-6 bg-gradient-to-t from-black/90 to-transparent">
-                <h3 className="text-2xl md:text-2xl font-bold tracking-tight font-heading mb-2 md:mb-2">{master.name}</h3>
+                <h3 className="text-2xl font-bold tracking-tight font-heading mb-0.5">{master.name}</h3>
                 <div className="flex items-center justify-between">
                   <p className="text-xs md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] opacity-40 font-mono">{master.role}</p>
                   <div className="flex items-center gap-2 md:gap-2">
