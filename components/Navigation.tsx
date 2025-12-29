@@ -26,19 +26,31 @@ export const Navigation: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <a href="#" className="text-xl font-black tracking-tighter font-heading relative">
-            <span className="relative">
+            <span className="relative inline-block">
               Б
               {/* Santa Hat */}
               <svg
-                className="absolute -top-3 -left-1 w-6 h-6 -rotate-12"
-                viewBox="0 0 64 64"
+                className="absolute -top-4 -left-1 w-7 h-7"
+                viewBox="0 0 100 100"
                 fill="none"
               >
-                <path d="M32 8C20 8 12 20 12 28C12 32 14 36 18 38L8 42C6 43 6 46 8 47L24 52C26 53 28 52 29 50L32 44L35 50C36 52 38 53 40 52L56 47C58 46 58 43 56 42L46 38C50 36 52 32 52 28C52 20 44 8 32 8Z" fill="#E53935"/>
-                <path d="M32 8C26 8 20 12 18 18C24 16 30 16 32 16C34 16 40 16 46 18C44 12 38 8 32 8Z" fill="#FFCDD2"/>
-                <circle cx="52" cy="12" r="6" fill="white"/>
-                <path d="M12 28C12 30 13 32 14 34L50 34C51 32 52 30 52 28" stroke="#B71C1C" strokeWidth="2"/>
-                <ellipse cx="32" cy="36" rx="20" ry="4" fill="#FFCDD2"/>
+                {/* Красный колпак */}
+                <path
+                  d="M20 70 Q25 30 50 15 Q60 25 70 65 Z"
+                  fill="#c41e3a"
+                />
+                {/* Тень на колпаке */}
+                <path
+                  d="M35 70 Q40 40 50 20 Q55 35 60 65 Z"
+                  fill="#a01830"
+                  opacity="0.5"
+                />
+                {/* Белый мех снизу */}
+                <ellipse cx="45" cy="72" rx="30" ry="8" fill="white"/>
+                <ellipse cx="45" cy="72" rx="30" ry="6" fill="#f5f5f5"/>
+                {/* Помпон */}
+                <circle cx="50" cy="12" r="10" fill="white"/>
+                <circle cx="48" cy="10" r="8" fill="#f5f5f5"/>
               </svg>
             </span>
             АГРАТ
