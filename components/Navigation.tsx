@@ -25,7 +25,24 @@ export const Navigation: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <a href="#" className="text-xl font-black tracking-tighter font-heading">БАГРАТ</a>
+          <a href="#" className="text-xl font-black tracking-tighter font-heading relative">
+            <span className="relative">
+              Б
+              {/* Santa Hat */}
+              <svg
+                className="absolute -top-3 -left-1 w-6 h-6 -rotate-12"
+                viewBox="0 0 64 64"
+                fill="none"
+              >
+                <path d="M32 8C20 8 12 20 12 28C12 32 14 36 18 38L8 42C6 43 6 46 8 47L24 52C26 53 28 52 29 50L32 44L35 50C36 52 38 53 40 52L56 47C58 46 58 43 56 42L46 38C50 36 52 32 52 28C52 20 44 8 32 8Z" fill="#E53935"/>
+                <path d="M32 8C26 8 20 12 18 18C24 16 30 16 32 16C34 16 40 16 46 18C44 12 38 8 32 8Z" fill="#FFCDD2"/>
+                <circle cx="52" cy="12" r="6" fill="white"/>
+                <path d="M12 28C12 30 13 32 14 34L50 34C51 32 52 30 52 28" stroke="#B71C1C" strokeWidth="2"/>
+                <ellipse cx="32" cy="36" rx="20" ry="4" fill="#FFCDD2"/>
+              </svg>
+            </span>
+            АГРАТ
+          </a>
         </motion.div>
 
         {/* Desktop Links (Hidden on Mobile) */}
