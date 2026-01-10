@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
         <div className="w-full h-full relative opacity-[0.15]">
            <img
             src="/images/philosophy/hero.jpg"
-            className="w-full h-full object-cover grayscale brightness-50"
+            className="w-full h-full object-cover grayscale brightness-[0.6]"
             alt="Hero Background"
            />
            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
