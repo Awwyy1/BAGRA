@@ -68,7 +68,7 @@ export const Navigation: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             animate={{
-              opacity: [0.4, 1, 0.4],
+              opacity: [0.7, 1, 0.7],
               letterSpacing: ["0.1em", "0.2em", "0.1em"],
               scale: [0.98, 1, 0.98]
             }}
@@ -77,7 +77,7 @@ export const Navigation: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="text-[9px] font-bold uppercase border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-sm font-mono"
+            className="text-[9px] font-bold uppercase bg-white text-[#0A0A0A] px-4 py-1.5 rounded-full font-mono"
           >
             Запись
           </motion.a>
