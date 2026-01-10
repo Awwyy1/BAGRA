@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState, useRef, useMemo } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
@@ -15,51 +15,6 @@ import { Gallery } from './sections/Gallery';
 import { Contact } from './sections/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
-
-// Компонент снежинки
-const Snowflake: React.FC<{ delay: number; duration: number; left: string; size: number }> = ({ delay, duration, left, size }) => (
-  <motion.div
-    className="absolute top-0 rounded-full bg-white pointer-events-none"
-    style={{
-      left,
-      width: size,
-      height: size,
-      filter: `blur(${size > 3 ? 1 : 0}px)`,
-    }}
-    initial={{ y: -20, opacity: 0 }}
-    animate={{
-      y: '100vh',
-      opacity: [0, 1, 1, 0],
-    }}
-    transition={{
-      duration,
-      delay,
-      repeat: Infinity,
-      ease: 'linear',
-    }}
-  />
-);
-
-// Компонент снегопада
-const Snowfall: React.FC = () => {
-  const snowflakes = useMemo(() => {
-    return Array.from({ length: 54 }, (_, i) => ({
-      id: i,
-      delay: (i / 54) * 15, // Равномерное распределение по времени
-      duration: 12 + Math.random() * 8,
-      left: `${Math.random() * 100}%`,
-      size: 2 + Math.random() * 4,
-    }));
-  }, []);
-
-  return (
-    <div className="fixed inset-0 z-50 overflow-hidden pointer-events-none">
-      {snowflakes.map((flake) => (
-        <Snowflake key={flake.id} {...flake} />
-      ))}
-    </div>
-  );
-};
 
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -114,7 +69,6 @@ const App: React.FC = () => {
 
   return (
     <div className="relative bg-[#0A0A0A] text-white w-full">
-      <Snowfall />
       <CustomCursor />
       <Navigation />
       
