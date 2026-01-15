@@ -49,6 +49,8 @@ export const Contact: React.FC = () => {
             <div className="flex gap-6 md:gap-12 text-[10px] uppercase tracking-widest font-bold font-mono">
                 <a href="https://www.instagram.com/bagrat_team_" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
                 <a href="https://wa.me/79639655444" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
+                <a href="https://t.me/bagrat_team" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Telegram</a>
+                <a href="https://max.ru/u/f9LHodD0cOK_ewb4aB5CBJ93KdUwwuxYVa3PWveftE9_APXQGaTbcwjkgmg" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Max</a>
             </div>
 
             <div className="text-[10px] uppercase tracking-widest font-bold text-center md:text-right font-mono">
