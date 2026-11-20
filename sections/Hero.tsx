@@ -20,9 +20,10 @@ export const Hero: React.FC = () => {
       <motion.div style={{ opacity }} className="absolute inset-0 z-0">
         <div className="w-full h-full relative opacity-[0.15]">
            <img
-            src="/images/philosophy/hero.jpg"
+            src="/images/philosophy/hero.webp"
             className="w-full h-full object-cover grayscale brightness-[0.7]"
-            alt="Hero Background"
+            alt=""
+            fetchPriority="high"
            />
            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]" />
         </div>
@@ -125,7 +126,7 @@ export const Hero: React.FC = () => {
                 transition={{ delay: 1.4 }}
                 className="text-[7px] md:text-[9px] font-mono tracking-widest opacity-30 uppercase"
               >
-                <span className="hidden md:inline">РЕЖИМ: </span>FREE ПАРКИНГ<br/>
+                ПАРКИНГ: БЕСПЛАТНО<br/>
                 ЛОКАЦИЯ: ФИЛИ
              </motion.div>
           </div>
@@ -140,7 +141,7 @@ export const Hero: React.FC = () => {
           className="absolute bottom-[-100px] md:bottom-[-120px] text-center w-full"
         >
           <span className="text-[10px] md:text-[14px] uppercase font-light text-white tracking-[0.5em] md:tracking-[0.8em] ml-[0.5em] md:ml-[0.8em]">
-            мужское раздаем
+            мужское раздаём
           </span>
         </motion.div>
       </motion.div>

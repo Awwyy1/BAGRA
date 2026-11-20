@@ -3,12 +3,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const items = [
-    "/images/gallery/1.jpg",
-    "/images/gallery/2.jpg",
-    "/images/gallery/3.jpg",
-    "/images/gallery/4.jpg",
-    "/images/gallery/5.jpg",
-    "/images/gallery/6.jpg"
+    "/images/gallery/1.webp",
+    "/images/gallery/2.webp",
+    "/images/gallery/3.webp",
+    "/images/gallery/4.webp",
+    "/images/gallery/5.webp",
+    "/images/gallery/6.webp"
 ];
 
 export const Gallery: React.FC = () => {
@@ -37,7 +37,9 @@ export const Gallery: React.FC = () => {
                 transition={{ duration: 1 }}
                 src={src}
                 className="w-full h-full object-cover grayscale transition-all duration-700"
-                alt={`Gallery ${idx}`}
+                alt={`Работа барбершопа БАГРАТ №${idx + 1}`}
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-black/40 opacity-0 md:group-hover:opacity-100 transition-opacity flex items-center justify-center">
                  <div className="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center">
