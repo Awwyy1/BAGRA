@@ -79,7 +79,7 @@ export const Navigation: React.FC = () => {
             }}
             className="text-[9px] font-bold uppercase bg-white text-[#0A0A0A] px-4 py-1.5 rounded-full font-mono"
           >
-            Запись
+            Записаться
           </motion.a>
         </div>
 

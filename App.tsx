@@ -47,19 +47,24 @@ const App: React.FC = () => {
     });
     if (document.body) resizeObserver.observe(document.body);
 
-    // 5. Логика загрузки
-    const timer = setTimeout(() => {
+    // 5. Логика загрузки: ждём шрифты, но не дольше 400 мс
+    let cancelled = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const reveal = () => {
+      if (cancelled) return;
+      cancelled = true;
+      clearTimeout(timer);
       setIsLoaded(true);
-      // Небольшая задержка перед показом контента, чтобы все успело отрендериться
-      setTimeout(() => {
-        setShowContent(true);
-        lenis.resize();
-        ScrollTrigger.refresh();
-      }, 300);
-    }, 1500);
+      setShowContent(true);
+      lenis.resize();
+      ScrollTrigger.refresh();
+    };
+    timer = setTimeout(reveal, 400);
+    document.fonts?.ready.then(reveal).catch(reveal);
 
     // Очистка
     return () => {
+      cancelled = true;
       cancelAnimationFrame(rafId);
       lenis.destroy();
       resizeObserver.disconnect();
@@ -93,7 +98,7 @@ const App: React.FC = () => {
 
       <main 
         ref={mainRef}
-        className={`relative w-full transition-opacity duration-1000 ${showContent ? 'opacity-100' : 'opacity-0'}`}
+        className={`relative w-full transition-opacity duration-500 ${showContent ? 'opacity-100' : 'opacity-0'}`}
       >
         <Hero />
         <About />

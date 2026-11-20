@@ -3,10 +3,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const masters = [
-  { name: "ФАРА", role: "Про-барбер", img: "/images/masters/fara.jpg", reviews: 637 },
-  { name: "ОСКАР", role: "Бренд-барбер", img: "/images/masters/oskar.jpg", reviews: 835 },
-  { name: "АЗА", role: "Бренд-барбер", img: "/images/masters/aza.jpg", reviews: 983 },
-  { name: "ИСАК", role: "Босс-барбер", img: "/images/masters/isak.jpg", reviews: 490 },
+  { name: "ФАРА", role: "Про-барбер", img: "/images/masters/fara.webp", reviews: 637 },
+  { name: "ОСКАР", role: "Бренд-барбер", img: "/images/masters/oskar.webp", reviews: 835 },
+  { name: "АЗА", role: "Бренд-барбер", img: "/images/masters/aza.webp", reviews: 983 },
+  { name: "ИСАК", role: "Босс-барбер", img: "/images/masters/isak.webp", reviews: 490 },
 ];
 
 const StarIcon = () => (
@@ -46,7 +46,9 @@ export const Masters: React.FC = () => {
               <img
                 src={master.img}
                 className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 group-hover:brightness-100 transition-all duration-700"
-                alt={master.name}
+                alt={`Барбер ${master.name}`}
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-6 bg-gradient-to-t from-black/90 to-transparent">
                 <h3 className="text-2xl font-bold tracking-tight font-heading mb-0.5">{master.name}</h3>

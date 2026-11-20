@@ -137,10 +137,10 @@ export const Services: React.FC = () => {
         <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-6 opacity-20">
           <div className="text-[7px] md:text-[8px] uppercase tracking-widest flex items-center gap-4 font-mono">
             <div className="w-2 h-2 border border-white rotate-45" />
-            Все процедуры включают премиум средства ухода
+            Все процедуры включают премиум-средства ухода
           </div>
           <div className="text-[7px] md:text-[8px] uppercase tracking-widest font-mono">
-            Обновлено: Декабрь 2025
+            Обновлено: декабрь 2025
           </div>
         </div>
       </div>

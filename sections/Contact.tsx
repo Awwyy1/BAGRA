@@ -23,7 +23,7 @@ export const Contact: React.FC = () => {
             </motion.h2>
 
             <p className="text-base md:text-lg lg:text-2xl font-light opacity-60 px-4">
-                Стрижем так, что хочется вернуться.
+                Стрижём так, что хочется вернуться.
             </p>
 
             <div className="pt-6 md:pt-12">
@@ -38,7 +38,7 @@ export const Contact: React.FC = () => {
                         data-cursor="text"
                         data-cursor-text="ЗАПИСЬ"
                     >
-                        <span className="relative z-10">Забронировать</span>
+                        <span className="relative z-10">Записаться</span>
                         <motion.div className="absolute inset-0 bg-gray-200 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                     </motion.a>
                 </Magnetic>
@@ -54,9 +54,9 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="text-[10px] uppercase tracking-widest font-bold text-center md:text-right font-mono">
-                <a href="https://yandex.com.ge/maps/-/CLHGaN0T" target="_blank" rel="noopener noreferrer" className="md:hidden hover:text-white transition-colors underline underline-offset-2">Новозаводская улица, 2 корп. 5</a>
+                <a href="https://yandex.ru/maps/-/CLHGaN0T" target="_blank" rel="noopener noreferrer" className="md:hidden hover:text-white transition-colors underline underline-offset-2">Новозаводская улица, 2 корп. 5</a>
                 <span className="hidden md:inline">Новозаводская улица, 2 корп. 5</span><br/>
-                Пн — Вс: 10:00 — 22:00
+                Ежедневно 10:00–22:00
             </div>
         </div>
     </section>

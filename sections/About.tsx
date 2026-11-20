@@ -24,7 +24,7 @@ export const About: React.FC = () => {
               style={{ y: textY }}
               className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.2] font-heading pr-4"
             >
-              2500+ <br/><span className="font-light opacity-50">Довольных</span><br/><span className="font-light opacity-50">Гостей</span>
+              2500+ <br/><span className="font-light opacity-50">довольных</span><br/><span className="font-light opacity-50">гостей</span>
             </motion.h2>
 
             <motion.div className="space-y-6 md:space-y-8 max-w-lg">
@@ -33,7 +33,7 @@ export const About: React.FC = () => {
                 </p>
                 <div className="h-[1px] w-20 bg-white/20" />
                 <p className="text-xs md:text-sm opacity-50 uppercase tracking-widest font-mono">
-                  Крутые стриги. Честные цены.
+                  Крутые стрижки. Честные цены.
                 </p>
             </motion.div>
         </div>
@@ -45,9 +45,11 @@ export const About: React.FC = () => {
           data-cursor-text="ВАЙБ"
         >
           <img
-            src="/images/philosophy/vibe.jpg"
+            src="/images/philosophy/vibe.webp"
             className="w-full h-full object-cover grayscale transition-transform duration-700 md:group-hover:scale-105"
-            alt="Вайб"
+            alt="Атмосфера барбершопа БАГРАТ"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 border border-white/5 m-2 md:m-4 pointer-events-none" />
           <div className="absolute top-0 right-0 p-4 md:p-8 text-[10px] uppercase tracking-widest opacity-20 font-mono">01 / Культура</div>
